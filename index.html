@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <title>Todo</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app/lib/angular.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/ngstorage/0.3.6/ngStorage.min.js"></script>
+  </head>
+  <body>
+    <div
+      class="main"
+      ng-app="myList"
+      ng-controller="ListController">
+      <h1>Todo List</h1>
+      <div class="addItem">
+        <input
+          type="text"
+          placeholder="Add your activity"
+          ng-model="newItem"
+          class="addText" />
+        <button ng-click="pushItem()">Add</button>
+      </div>
+      <ul>
+        <li ng-repeat="i in items">
+          {{i}}
+          <span
+            class="del"
+            ng-click="deleteItem()"
+            >&#10060;</span
+          >
+        </li>
+      </ul>
+    </div>
+
+    <script src="app/app.js"></script>
+  </body>
+</html>
